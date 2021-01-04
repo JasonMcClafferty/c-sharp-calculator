@@ -1,0 +1,11 @@
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.csprojAssemblyReference.cache
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.csproj.CoreCompileInputs.cache
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.AssemblyInfoInputs.cache
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.AssemblyInfo.cs
+/home/jasonmcclafferty/code/C#/bin/Debug/netcoreapp2.2/C#.deps.json
+/home/jasonmcclafferty/code/C#/bin/Debug/netcoreapp2.2/C#.runtimeconfig.json
+/home/jasonmcclafferty/code/C#/bin/Debug/netcoreapp2.2/C#.runtimeconfig.dev.json
+/home/jasonmcclafferty/code/C#/bin/Debug/netcoreapp2.2/C#.dll
+/home/jasonmcclafferty/code/C#/bin/Debug/netcoreapp2.2/C#.pdb
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.dll
+/home/jasonmcclafferty/code/C#/obj/Debug/netcoreapp2.2/C#.pdb
