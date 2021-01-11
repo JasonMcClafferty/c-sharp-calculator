@@ -11,53 +11,22 @@ namespace C_
         #region MATH_OPERATOR_METHODS
         public void Add() {
 
-                String      userAdditionInput = String.Empty;
-                long         total = 0;
-                List<long>   operands = new List<long>();
-
+                String          userAdditionInput = String.Empty;
+                List<long>      operands = new List<long>();
 
                 Console.WriteLine("Enter the numbers you wish to add, each followed by 'Enter'. When You're ready to add them all, submit '=':");
-
             
                 while (userAdditionInput != "=") {
 
                     userAdditionInput = ReadUserInput();
-                    
-
-                    TryParseUserInput(userAdditionInput);
-
-
-                    /* void TryParseUserInput(); --------------------------------------
-                    try {
-                        us*rAdditionInput_AsLong = int.Parse(userAdditionInput);
-                    }
-                    catch (FormatException) {
-                        if (userAdditionInput != "=") {
-                            Console.WriteLine("Can't parse the user's operand as an integer");
-                        }
-                    }
-                    */
-
-                    // AddOperandsToExpressionList() -----------------------------------
-                    operands.Add(userAdditionInput_AsLong);
-                    userAdditionInput_AsLong = 0;                    
-            
-
-                    // DisplayCurrentOperands(); ---------------------------------------
-                    foreach (long i in operands) {
-                        if (i != 0) { Console.Write(i + " "); }
-                    }
-                
+                                
+                    // returns 0 if it fails - won't affect the sum but might affect UX.
+                    operands.Add(TryParseUserInputAsLong(userAdditionInput));
+                    DisplayExpression(operands);
                 }
-
-
-                // CalculateTotal();        [ResolveExpression()]
-                foreach (long i in operands) {
-                    total += i;
-                }
-                Console.WriteLine("\ntotal: " + total);
+                CalculateTotal(operands);
             }
-                
+           
         public long Multiply(long x, long y) {
             
             // Beginning at a different total value can change the reference point
@@ -72,7 +41,6 @@ namespace C_
             }
             return total;
         }
-        
         public string DivideFirstArgBySecondArg(long remainder, long divisor) {
             
             // subtract one operand from the other until the remainder < y
@@ -124,7 +92,6 @@ namespace C_
                 return b; 
             }
         } 
-
         string SimplifyFraction(long numerator, long divisor) {
 
             long highestCommonFactor = GetHighestCommonFactor(numerator, divisor);
@@ -138,15 +105,12 @@ namespace C_
 
             return simplifiedFraction;
         }        
-        #endregion
-
         string ReadUserInput() {
 
             Console.WriteLine("");
             return Console.ReadLine();
         }
-
-        long TryParseUserInput(string userAdditionInput) {
+        long TryParseUserInputAsLong(string userAdditionInput) {
             
             try {
 
@@ -163,6 +127,28 @@ namespace C_
 
             return 0;
         }
+        void CalculateTotal(List<long> operands) {
+                    
+                    long total = 0;
+
+                    foreach (long i in operands) {
+                    total += i;
+                }
+                Console.WriteLine("\ntotal: " + total);
+            }
+        void DisplayExpression(List<long> operands) {
+           
+            for (int i = 0; i < operands.Count; i++) {
+                if (i == 0) { 
+                    Console.Write(operands[i]); 
+                }
+                else if ( i > 0) {
+                    Console.Write( " + " + operands[i]);
+                } 
+            }
+        }
+        
+        #endregion
     }
 
 
